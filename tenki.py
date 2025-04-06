@@ -55,3 +55,14 @@ df2 = pd.DataFrame(weather_json['forecasts'][1]['chanceOfRain'], index=["明日"
 df3 = pd.DataFrame(weather_json['forecasts'][2]['chanceOfRain'], index=["明後日"])
 df = pd.concat([df1, df2, df3])
 st.dataframe(df)
+
+hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        .stDeployButton {display: none;}
+        .css-1rs6os.edgvbvh3 {display: none;}
+        </style>
+        """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
